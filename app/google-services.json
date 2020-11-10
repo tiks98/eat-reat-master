@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "747008759431",
+    "firebase_url": "https://eat-reat.firebaseio.com",
+    "project_id": "eat-reat",
+    "storage_bucket": "eat-reat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747008759431:android:02ece3deadbe9c9806ca22",
+        "android_client_info": {
+          "package_name": "com.example.eat_reat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747008759431-jp9058790d3fpl3c83gf8vq18v0e2k8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-J0ei1dklvoPhbqfxVDk53ppT9hKiZTc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747008759431-jp9058790d3fpl3c83gf8vq18v0e2k8u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

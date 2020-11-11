@@ -10,20 +10,108 @@
         android:id="@+id/addressTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:text="@string/addressTitle"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="@dimen/headingSize24"
+        app:layout_constraintBottom_toTopOf="@id/addressLineOneEditTxt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/enteredQuantityTxtView"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/logoutFloatingActionBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-
+        android:clickable="true"
+        android:background="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_baseline_exit_to_app_24"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:tint="@color/white"
+        android:focusable="true"
+        />
+
+    <EditText
+        android:id="@+id/addressLineOneEditTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="@string/addressLineOne"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@id/addressLineTwoEditTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addressTextView" />
+
+    <EditText
+        android:id="@+id/addressLineTwoEditTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="@string/addressLineTwo"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@id/cityEditTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressLineOneEditTxt" />
+
+    <EditText
+        android:id="@+id/cityEditTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="@string/city"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@id/provinceEditTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressLineTwoEditTxt" />
+
+    <EditText
+        android:id="@+id/provinceEditTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="@string/province"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@id/postalCodeEditTxt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityEditTxt" />
+
+    <EditText
+        android:id="@+id/postalCodeEditTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:ems="10"
+        android:hint="@string/postalCode"
+        android:inputType="textPostalAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.253"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/provinceEditTxt" />
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="153dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="120dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/submitBtn"
+        android:textColor="@color/white"
+        android:textSize="@dimen/headingSize24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postalCodeEditTxt" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

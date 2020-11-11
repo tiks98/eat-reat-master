@@ -2,5 +2,11 @@
     <string name="app_name">eat-reat</string>
     <string name="checkout">CheckOut</string>
     <string name="quantity"></string>
-    <string name="addressTitle">You have entered this quantity</string>
+    <string name="addressTitle">Please Enter Your Details</string>
+    <string name="addressLineOne">Address Line 1</string>
+    <string name="addressLineTwo">Address Line 2</string>
+    <string name="city">City</string>
+    <string name="province">Province</string>
+    <string name="postalCode">Postal Code</string>
+    <string name="submitBtn">Submit</string>
 </resources>

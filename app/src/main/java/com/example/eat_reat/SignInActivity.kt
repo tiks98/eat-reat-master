@@ -45,7 +45,7 @@ class SignInActivity : AppCompatActivity() {
                 // Successfully signed in
                 val user = FirebaseAuth.getInstance().currentUser
                 // sending to AskAddress Activity to get full details of the user if not already entered by the user
-                val intent = Intent(applicationContext, AskAddressActivity::class.java)
+                val intent = Intent(applicationContext, MainActivity::class.java)
                 startActivity(intent)
             } else {
                 // Sign in failed. If response is null the user canceled the

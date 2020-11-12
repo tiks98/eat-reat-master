@@ -7,12 +7,238 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/headingTxtView"
+        android:layout_width="292dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/headingTxtView"
+        android:textColor="#000000"
+        android:textSize="@dimen/headingSize24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/cartFab"
+        app:layout_constraintStart_toEndOf="@+id/homeFab"
+        app:srcCompat="@drawable/ic_baseline_account_circle_black_48" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/logOutFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/red"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_exit_to_app_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/cartFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/white"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_shopping_cart_black_96" />
+
+    <HorizontalScrollView
+        android:id="@+id/horiScrollView1"
+        android:layout_width="666dp"
+        android:layout_height="277dp"
+        android:layout_marginTop="10dp"
+        android:scrollX="@dimen/smallScroll"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:scrollbarTrackHorizontal="@color/grey"
+        android:scrollbars="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subHeadingTxtView">
+
+        <LinearLayout
+            android:id="@+id/HLL1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/VLL1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/burgerImageView"
+                    android:layout_width="250dp"
+                    android:layout_height="190dp"
+                    app:srcCompat="@drawable/burger" />
+
+                <TextView
+                    android:id="@+id/burgerNameTxtView"
+                    android:layout_width="151dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/burgerName"
+                    android:textSize="@dimen/profileText" />
+
+                <TextView
+                    android:id="@+id/burgerDescTxtView"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:text="@string/burgerDesc" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/HLL2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp">
+
+                <LinearLayout
+                    android:id="@+id/VLL2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/noodlesImageView"
+                        android:layout_width="250dp"
+                        android:layout_height="190dp"
+                        app:srcCompat="@drawable/noodles" />
+
+                    <TextView
+                        android:id="@+id/noodlesNameTxtView"
+                        android:layout_width="151dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/noodles"
+                        android:textSize="@dimen/profileText" />
+
+                    <TextView
+                        android:id="@+id/noodlesDescTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="33dp"
+                        android:text="@string/noodlesDesc" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:id="@+id/horiScrollView2"
+        android:layout_width="666dp"
+        android:layout_height="240dp"
+        android:layout_marginTop="10dp"
+        android:scrollX="@dimen/smallScroll"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:scrollbarTrackHorizontal="@color/grey"
+        android:scrollbars="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horiScrollView1">
+
+        <LinearLayout
+            android:id="@+id/HLL3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/VLL3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/dalSoupImageView"
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    app:srcCompat="@drawable/soup" />
+
+                <TextView
+                    android:id="@+id/dalSoupNameTxtView"
+                    android:layout_width="151dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/soupName"
+                    android:textSize="@dimen/profileText" />
+
+                <TextView
+                    android:id="@+id/dalSoupDescTxtView"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:text="@string/soupDesc" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/HLL4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp">
+
+                <LinearLayout
+                    android:id="@+id/VLL4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/samosaImageView"
+                        android:layout_width="250dp"
+                        android:layout_height="150dp"
+                        app:srcCompat="@drawable/samosa" />
+
+                    <TextView
+                        android:id="@+id/samosaNameTxtView"
+                        android:layout_width="151dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/samosa"
+                        android:textSize="@dimen/profileText" />
+
+                    <TextView
+                        android:id="@+id/samosaDescTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="33dp"
+                        android:text="@string/samosasDesc" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/subHeadingTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="@string/subHeadingHome"
+        android:textSize="@dimen/profileText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headingTxtView" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/homeFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/white"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_fastfood_black_48" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

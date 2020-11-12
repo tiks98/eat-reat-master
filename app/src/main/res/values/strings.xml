@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">eat-reat</string>
+    <string name="app_name">Eat-reat</string>
     <string name="checkout">CheckOut</string>
     <string name="quantity"></string>
     <string name="addressTitle">Please Enter Your Details</string>
@@ -9,4 +9,20 @@
     <string name="province">Province</string>
     <string name="postalCode">Postal Code</string>
     <string name="submitBtn">Submit</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="headingTxtView">Welcome to Eat-reat</string>
+    <string name="profileBtn">Profile</string>
+    <string name="profileHeadingTxtView">My Profile</string>
+    <string name="addNewAddressBtn">Add New Address</string>
+    <string name="email">Email</string>
+    <string name="burgerName">Beef Burger</string>
+    <string name="burgerDesc">Juicy Beef Burger with fingerlicking taste</string>
+    <string name="noodles">Noodles</string>
+    <string name="noodlesDesc">Speciality Ramen Noodles with extreme spiciness</string>
+    <string name="subHeadingHome">Snacks at glance</string>
+    <string name="soupName">Dal Soup</string>
+    <string name="soupDesc"><![CDATA[A Hot and Healthy Soup with lentils & masala\'s]]></string>
+    <string name="samosa">Samosa</string>
+    <string name="samosasDesc">Savoury Potato filling with tangy chutney</string>
 </resources>

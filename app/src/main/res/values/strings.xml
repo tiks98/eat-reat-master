@@ -20,9 +20,20 @@
     <string name="burgerDesc">Juicy Beef Burger with fingerlicking taste</string>
     <string name="noodles">Noodles</string>
     <string name="noodlesDesc">Speciality Ramen Noodles with extreme spiciness</string>
-    <string name="subHeadingHome">Snacks at glance</string>
+    <string name="subHeadingHome">Snacks at a Glance</string>
     <string name="soupName">Dal Soup</string>
     <string name="soupDesc"><![CDATA[A Hot and Healthy Soup with lentils & masala\'s]]></string>
     <string name="samosa">Samosa</string>
     <string name="samosasDesc">Savoury Potato filling with tangy chutney</string>
+    <string name="burritoName">Burrito</string>
+    <string name="burritoDesc"><![CDATA[Beef or Veggie Burrito with salsa & guac]]></string>
+    <string name="tacos">Taco\'s</string>
+    <string name="tacosDesc">Beef or Vegie Tacos with mexican flavours</string>
+    <string name="butterchickenName">Butter Chicken</string>
+    <string name="butterChickenDesc">Spicy Butter Chicken with Superb Indian Flavours</string>
+    <string name="naan">Naan Bread</string>
+    <string name="naansDesc">Fluffy Naan bread made with All Purpose Flour</string>
+    <string name="SH2Home"><![CDATA[Healthy & Tasty]]></string>
+    <string name="SH3Home">Mexican</string>
+    <string name="SH4Home">Indian</string>
 </resources>

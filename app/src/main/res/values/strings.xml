@@ -36,4 +36,5 @@
     <string name="SH2Home"><![CDATA[Healthy & Tasty]]></string>
     <string name="SH3Home">Mexican</string>
     <string name="SH4Home">Indian</string>
+    <string name="addToCart">Add to Cart</string>
 </resources>

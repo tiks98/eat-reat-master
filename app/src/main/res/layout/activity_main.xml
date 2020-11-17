@@ -79,13 +79,15 @@
                         android:id="@+id/VLL1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:clickable="true">
 
                         <ImageView
                             android:id="@+id/burgerImageView"
                             android:layout_width="250dp"
                             android:layout_height="190dp"
-                            app:srcCompat="@drawable/burger" />
+                            app:srcCompat="@drawable/burger"
+                            />
 
                         <TextView
                             android:id="@+id/burgerNameTxtView"

@@ -6,10 +6,19 @@ import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_cart.*
 
+
 class CartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
+
+        var itemName = intent.getStringExtra("itemName")
+        cartItemNameTxtView.text = itemName
+
+        var itemImage = intent.extras?.getInt("itemImage")
+        if (itemImage != null) {
+            cartItemImageView.setImageResource(itemImage)
+        }
 
         //creating a OnClickListner to go to another activity
         checkoutButton.setOnClickListener{

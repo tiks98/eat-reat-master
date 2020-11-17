@@ -41,6 +41,70 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        VLL1.setOnClickListener{
+            val intent = Intent(applicationContext, ItemDetailActivity::class.java)
+            intent.putExtra("itemName", burgerNameTxtView.text.toString())
+            intent.putExtra("itemDesc", burgerDescTxtView.text.toString())
+            intent.putExtra("itemImage", R.drawable.burger)
+            startActivity(intent)
+        }
+
+        VLL2.setOnClickListener{
+            val intent = Intent(applicationContext, ItemDetailActivity::class.java)
+            intent.putExtra("itemName", noodlesNameTxtView.text.toString())
+            intent.putExtra("itemDesc", noodlesDescTxtView.text.toString())
+            intent.putExtra("itemImage", R.drawable.noodles)
+            startActivity(intent)
+        }
+
+        VLL3.setOnClickListener{
+            val intent = Intent(applicationContext, ItemDetailActivity::class.java)
+            intent.putExtra("itemName", dalSoupNameTxtView.text.toString())
+            intent.putExtra("itemDesc", dalSoupDescTxtView.text.toString())
+            intent.putExtra("itemImage", R.drawable.soup)
+            startActivity(intent)
+        }
+
+        VLL4.setOnClickListener{
+            val intent = Intent(applicationContext, ItemDetailActivity::class.java)
+            intent.putExtra("itemName", samosaNameTxtView.text.toString())
+            intent.putExtra("itemDesc", samosaDescTxtView.text.toString())
+            intent.putExtra("itemImage", R.drawable.samosa)
+            startActivity(intent)
+        }
+
+        VLL5.setOnClickListener{
+            val intent = Intent(applicationContext, ItemDetailActivity::class.java)
+            intent.putExtra("itemName", burritoNameTxtView.text.toString())
+            intent.putExtra("itemDesc", burritoDescTxtView.text.toString())
+            intent.putExtra("itemImage", R.drawable.burrito)
+            startActivity(intent)
+        }
+
+        VLL6.setOnClickListener{
+            val intent = Intent(applicationContext, ItemDetailActivity::class.java)
+            intent.putExtra("itemName", tacosNameTxtView.text.toString())
+            intent.putExtra("itemDesc", tacosDescTxtView.text.toString())
+            intent.putExtra("itemImage", R.drawable.tacos)
+            startActivity(intent)
+        }
+
+        VLL7.setOnClickListener{
+            val intent = Intent(applicationContext, ItemDetailActivity::class.java)
+            intent.putExtra("itemName", butterChickenTxtView.text.toString())
+            intent.putExtra("itemDesc", butterChickenDescTxtView.text.toString())
+            intent.putExtra("itemImage", R.drawable.butterchicken)
+            startActivity(intent)
+        }
+
+        VLL8.setOnClickListener{
+            val intent = Intent(applicationContext, ItemDetailActivity::class.java)
+            intent.putExtra("itemName", naanNameTxtView.text.toString())
+            intent.putExtra("itemDesc", naanDescTxtView.text.toString())
+            intent.putExtra("itemImage", R.drawable.naan)
+            startActivity(intent)
+        }
+
     }
 
 

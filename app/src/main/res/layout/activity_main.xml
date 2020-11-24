@@ -48,7 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
-                    android:layout_marginLeft="100dp"
+                    android:layout_marginStart="100dp"
                     android:backgroundTint="@color/red"
                     android:clickable="true"
                     android:focusable="true"
@@ -80,7 +80,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:clickable="true">
+                        android:clickable="true"
+                        android:focusable="true">
 
                         <ImageView
                             android:id="@+id/burgerImageView"
@@ -109,7 +110,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:paddingLeft="20dp">
+                        android:paddingStart="20dp">
 
                         <LinearLayout
                             android:id="@+id/VLL2"
@@ -200,7 +201,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:paddingLeft="20dp">
+                        android:paddingStart="20dp">
 
                         <LinearLayout
                             android:id="@+id/VLL4"
@@ -291,7 +292,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:paddingLeft="20dp">
+                        android:paddingStart="20dp">
 
                         <LinearLayout
                             android:id="@+id/VLL6"
@@ -382,7 +383,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:paddingLeft="20dp">
+                        android:paddingStart="20dp">
 
                         <LinearLayout
                             android:id="@+id/VLL8"
@@ -433,7 +434,8 @@
             android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_baseline_fastfood_black_48" />
+            app:srcCompat="@drawable/ic_baseline_fastfood_black_48"
+            android:focusable="true" />
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -441,7 +443,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginStart="100dp"
             android:clickable="true"
             android:focusable="true"
             app:backgroundTint="#FFFFFF"
@@ -457,12 +459,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:layout_marginLeft="90dp"
+            android:layout_marginStart="90dp"
             android:backgroundTint="@color/white"
             android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_baseline_shopping_cart_black_96" />
+            app:srcCompat="@drawable/ic_baseline_shopping_cart_black_96"
+            android:focusable="true" />
     </LinearLayout>
 
 

@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
@@ -21,20 +20,19 @@ class AskAddressActivity : AppCompatActivity() {
             if (addressLineOneEditTxt.text.toString().isNotEmpty() && cityEditTxt.text.toString().isNotEmpty() && provinceEditTxt.text.toString().isNotEmpty() && postalCodeEditTxt.text.toString().isNotEmpty()){
                 //taking input from user from askaddress activity
                 val userDetails = UserDetails()
-                userDetails.firstName = firstNameEditTxt.text.toString().trim()
-                userDetails.lastName = lastNameEditTxt.text.toString().trim()
                 userDetails.addressLineOne = addressLineOneEditTxt.text.toString().trim()
                 userDetails.addressLineTwo = addressLineTwoEditTxt.text.toString().trim()
                 userDetails.city = cityEditTxt.text.toString().trim()
                 userDetails.province = provinceEditTxt.text.toString().trim()
                 userDetails.postalCode = postalCodeEditTxt.text.toString().trim()
-                userDetails.email = emailAddressEditTxt.text.toString().trim()
+                userDetails.userId = Firebase.auth.currentUser!!.uid.trim()
+
 
 
                 //connect to firebase database
                 val db = FirebaseFirestore.getInstance().collection("UserDetails")
-                userDetails.id = Firebase.auth.currentUser?.uid
-                db.document(userDetails.id!!).set(userDetails)
+                userDetails.addressId = db.document().id
+                db.document(userDetails.addressId!!).set(userDetails)
 
                 Toast.makeText(this, "Your Details have been saved", Toast.LENGTH_LONG).show()
 

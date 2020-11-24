@@ -10,47 +10,19 @@
         android:id="@+id/addressTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="@string/addressTitle"
         android:textSize="@dimen/headingSize24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.22"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/firstNameEditTxt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:ems="10"
-        android:hint="@string/firstName"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@id/lastNameEditTxt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addressTextView" />
-
-    <EditText
-        android:id="@+id/lastNameEditTxt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:ems="10"
-        android:hint="@string/lastName"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@id/addressLineOneEditTxt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstNameEditTxt" />
 
     <EditText
         android:id="@+id/addressLineOneEditTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="@string/addressLineOne"
         android:inputType="textPersonName"
@@ -58,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameEditTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/addressTextView" />
 
     <EditText
         android:id="@+id/addressLineTwoEditTxt"
@@ -115,18 +87,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/provinceEditTxt" />
 
-    <EditText
-        android:id="@+id/emailAddressEditTxt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/postalCodeEditTxt" />
 
     <Button
         android:id="@+id/submitBtn"
@@ -139,7 +99,7 @@
         android:textSize="@dimen/headingSize24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailAddressEditTxt" />
+        app:layout_constraintTop_toBottomOf="@+id/postalCodeEditTxt" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

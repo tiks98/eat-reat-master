@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="headingSize24">30sp</dimen>
-    <dimen name="profileText">24dp</dimen>
+    <dimen name="profileText">24sp</dimen>
     <dimen name="smallScroll">50dp</dimen>
+    <dimen name="marginTop">40dp</dimen>
 </resources>

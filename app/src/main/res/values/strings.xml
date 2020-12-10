@@ -37,4 +37,21 @@
     <string name="SH3Home">Mexican</string>
     <string name="SH4Home">Indian</string>
     <string name="addToCart">Add to Cart</string>
+    <string name="defaultAddress">Select as Default Address</string>
+    <string name="burgerPrice">$ 3.49</string>
+    <string name="noodlesPrice">$ 9.99</string>
+    <string name="dalSoupPrice">$ 2.49</string>
+    <string name="samosaPrice">$ 2.00</string>
+    <string name="burritoPrice">$ 8.99</string>
+    <string name="tacosPrice">$ 5.99</string>
+    <string name="butterChickenPrice">$ 12.99</string>
+    <string name="naanPrice">$ 1.00</string>
+    <string name="cartHeading">Cart</string>
+    <string name="initial_quantity">0</string>
+    <string name="placeOrder">Place Order</string>
+    <string name="totalTxtView">Total:</string>
+    <string name="deleteCartItem">Delete</string>
+    <item name="profileHeading" type="id" />
+    <item name="addressCardRecyclerView" type="id" />
+    <item name="addNewAddressBtn" type="id" />
 </resources>

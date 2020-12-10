@@ -30,6 +30,12 @@
                 android:textSize="36sp" />
 
             <TextView
+                android:id="@+id/itemPriceTxtView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp" />
+
+            <TextView
                 android:id="@+id/itemDescTxtView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

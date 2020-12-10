@@ -39,7 +39,7 @@ class AskAddressActivity : AppCompatActivity() {
 
 
                 //route after user submits details
-                val intent = Intent(applicationContext, profileActivity::class.java)
+                val intent = Intent(applicationContext, ProfileActivity::class.java)
                 startActivity(intent)
             }
             else{

@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
 
         fabProfile.setOnClickListener{
-            val intent = Intent(applicationContext, profileActivity::class.java)
+            val intent = Intent(applicationContext, ProfileActivity::class.java)
             startActivity(intent)
         }
 
@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         VLL1.setOnClickListener{
             val intent = Intent(applicationContext, ItemDetailActivity::class.java)
             intent.putExtra("itemName", burgerNameTxtView.text.toString())
+            intent.putExtra("itemPrice", burgerPriceTxtView.text.toString())
             intent.putExtra("itemDesc", burgerDescTxtView.text.toString())
             intent.putExtra("itemImage", R.drawable.burger)
             startActivity(intent)
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         VLL2.setOnClickListener{
             val intent = Intent(applicationContext, ItemDetailActivity::class.java)
             intent.putExtra("itemName", noodlesNameTxtView.text.toString())
+            intent.putExtra("itemPrice", noodlesPriceTxtView.text.toString())
             intent.putExtra("itemDesc", noodlesDescTxtView.text.toString())
             intent.putExtra("itemImage", R.drawable.noodles)
             startActivity(intent)
@@ -60,6 +62,7 @@ class MainActivity : AppCompatActivity() {
         VLL3.setOnClickListener{
             val intent = Intent(applicationContext, ItemDetailActivity::class.java)
             intent.putExtra("itemName", dalSoupNameTxtView.text.toString())
+            intent.putExtra("itemPrice", dalSoupPriceTxtView.text.toString())
             intent.putExtra("itemDesc", dalSoupDescTxtView.text.toString())
             intent.putExtra("itemImage", R.drawable.soup)
             startActivity(intent)
@@ -68,6 +71,7 @@ class MainActivity : AppCompatActivity() {
         VLL4.setOnClickListener{
             val intent = Intent(applicationContext, ItemDetailActivity::class.java)
             intent.putExtra("itemName", samosaNameTxtView.text.toString())
+            intent.putExtra("itemPrice", samosaPriceTxtView.text.toString())
             intent.putExtra("itemDesc", samosaDescTxtView.text.toString())
             intent.putExtra("itemImage", R.drawable.samosa)
             startActivity(intent)
@@ -76,6 +80,7 @@ class MainActivity : AppCompatActivity() {
         VLL5.setOnClickListener{
             val intent = Intent(applicationContext, ItemDetailActivity::class.java)
             intent.putExtra("itemName", burritoNameTxtView.text.toString())
+            intent.putExtra("itemPrice", burritoPriceTxtView.text.toString())
             intent.putExtra("itemDesc", burritoDescTxtView.text.toString())
             intent.putExtra("itemImage", R.drawable.burrito)
             startActivity(intent)
@@ -84,6 +89,7 @@ class MainActivity : AppCompatActivity() {
         VLL6.setOnClickListener{
             val intent = Intent(applicationContext, ItemDetailActivity::class.java)
             intent.putExtra("itemName", tacosNameTxtView.text.toString())
+            intent.putExtra("itemPrice", tacosPriceTxtView.text.toString())
             intent.putExtra("itemDesc", tacosDescTxtView.text.toString())
             intent.putExtra("itemImage", R.drawable.tacos)
             startActivity(intent)
@@ -92,6 +98,7 @@ class MainActivity : AppCompatActivity() {
         VLL7.setOnClickListener{
             val intent = Intent(applicationContext, ItemDetailActivity::class.java)
             intent.putExtra("itemName", butterChickenTxtView.text.toString())
+            intent.putExtra("itemPrice", butterChickenPriceTxtView.text.toString())
             intent.putExtra("itemDesc", butterChickenDescTxtView.text.toString())
             intent.putExtra("itemImage", R.drawable.butterchicken)
             startActivity(intent)
@@ -100,6 +107,7 @@ class MainActivity : AppCompatActivity() {
         VLL8.setOnClickListener{
             val intent = Intent(applicationContext, ItemDetailActivity::class.java)
             intent.putExtra("itemName", naanNameTxtView.text.toString())
+            intent.putExtra("itemPrice", naanPriceTxtView.text.toString())
             intent.putExtra("itemDesc", naanDescTxtView.text.toString())
             intent.putExtra("itemImage", R.drawable.naan)
             startActivity(intent)

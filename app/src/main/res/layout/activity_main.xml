@@ -90,12 +90,26 @@
                             app:srcCompat="@drawable/burger"
                             />
 
-                        <TextView
-                            android:id="@+id/burgerNameTxtView"
-                            android:layout_width="151dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/burgerName"
-                            android:textSize="@dimen/profileText" />
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/burgerNameTxtView"
+                                android:layout_width="151dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/burgerName"
+                                android:textSize="@dimen/profileText" />
+
+                            <TextView
+                                android:id="@+id/burgerPriceTxtView"
+                                android:layout_width="match_parent"
+                                android:layout_height="33dp"
+                                android:text="@string/burgerPrice"
+                                android:textSize="@dimen/priceSize"
+                                android:textAlignment="viewEnd"
+                                />
+                        </LinearLayout>
 
                         <TextView
                             android:id="@+id/burgerDescTxtView"
@@ -124,13 +138,27 @@
                                 android:layout_height="190dp"
                                 app:srcCompat="@drawable/noodles" />
 
-                            <TextView
-                                android:id="@+id/noodlesNameTxtView"
-                                android:layout_width="151dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/noodles"
-                                android:textSize="@dimen/profileText" />
+                                android:orientation="horizontal">
 
+                                <TextView
+                                    android:id="@+id/noodlesNameTxtView"
+                                    android:layout_width="151dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/noodles"
+                                    android:textSize="@dimen/profileText" />
+
+                                <TextView
+                                    android:id="@+id/noodlesPriceTxtView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="33dp"
+                                    android:text="@string/noodlesPrice"
+                                    android:textSize="@dimen/priceSize"
+                                    android:textAlignment="viewEnd"
+                                    />
+                            </LinearLayout>
                             <TextView
                                 android:id="@+id/noodlesDescTxtView"
                                 android:layout_width="match_parent"
@@ -181,13 +209,26 @@
                             android:layout_height="150dp"
                             app:srcCompat="@drawable/soup" />
 
-                        <TextView
-                            android:id="@+id/dalSoupNameTxtView"
-                            android:layout_width="151dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/soupName"
-                            android:textSize="@dimen/profileText" />
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/dalSoupNameTxtView"
+                                android:layout_width="151dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/soupName"
+                                android:textSize="@dimen/profileText" />
 
+                            <TextView
+                                android:id="@+id/dalSoupPriceTxtView"
+                                android:layout_width="match_parent"
+                                android:layout_height="33dp"
+                                android:text="@string/dalSoupPrice"
+                                android:textSize="@dimen/priceSize"
+                                android:textAlignment="viewEnd"
+                                />
+                        </LinearLayout>
                         <TextView
                             android:id="@+id/dalSoupDescTxtView"
                             android:layout_width="match_parent"
@@ -215,13 +256,26 @@
                                 android:layout_height="150dp"
                                 app:srcCompat="@drawable/samosa" />
 
-                            <TextView
-                                android:id="@+id/samosaNameTxtView"
-                                android:layout_width="151dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/samosa"
-                                android:textSize="@dimen/profileText" />
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:id="@+id/samosaNameTxtView"
+                                    android:layout_width="151dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/samosa"
+                                    android:textSize="@dimen/profileText" />
 
+                                <TextView
+                                    android:id="@+id/samosaPriceTxtView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="33dp"
+                                    android:text="@string/samosaPrice"
+                                    android:textSize="@dimen/priceSize"
+                                    android:textAlignment="viewEnd"
+                                    />
+                            </LinearLayout>
                             <TextView
                                 android:id="@+id/samosaDescTxtView"
                                 android:layout_width="match_parent"
@@ -272,13 +326,26 @@
                             android:layout_height="190dp"
                             app:srcCompat="@drawable/burrito" />
 
-                        <TextView
-                            android:id="@+id/burritoNameTxtView"
-                            android:layout_width="151dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/burritoName"
-                            android:textSize="@dimen/profileText" />
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/burritoNameTxtView"
+                                android:layout_width="151dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/burritoName"
+                                android:textSize="@dimen/profileText" />
 
+                            <TextView
+                                android:id="@+id/burritoPriceTxtView"
+                                android:layout_width="match_parent"
+                                android:layout_height="33dp"
+                                android:text="@string/burritoPrice"
+                                android:textSize="@dimen/priceSize"
+                                android:textAlignment="viewEnd"
+                                />
+                        </LinearLayout>
                         <TextView
                             android:id="@+id/burritoDescTxtView"
                             android:layout_width="match_parent"
@@ -305,14 +372,25 @@
                                 android:layout_width="250dp"
                                 android:layout_height="190dp"
                                 app:srcCompat="@drawable/tacos" />
-
-                            <TextView
-                                android:id="@+id/tacosNameTxtView"
-                                android:layout_width="151dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/tacos"
-                                android:textSize="@dimen/profileText" />
-
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:id="@+id/tacosNameTxtView"
+                                    android:layout_width="151dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/tacos"
+                                    android:textSize="@dimen/profileText" />
+                                <TextView
+                                    android:id="@+id/tacosPriceTxtView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="33dp"
+                                    android:text="@string/tacosPrice"
+                                    android:textSize="@dimen/priceSize"
+                                    android:textAlignment="viewEnd"
+                                    />
+                            </LinearLayout>
                             <TextView
                                 android:id="@+id/tacosDescTxtView"
                                 android:layout_width="match_parent"
@@ -362,14 +440,25 @@
                             android:layout_width="250dp"
                             android:layout_height="150dp"
                             app:srcCompat="@drawable/butterchicken" />
-
-                        <TextView
-                            android:id="@+id/butterChickenTxtView"
-                            android:layout_width="151dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/butterchickenName"
-                            android:textSize="@dimen/profileText" />
-
+                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/butterChickenTxtView"
+                                android:layout_width="151dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/butterchickenName"
+                                android:textSize="@dimen/profileText" />
+                            <TextView
+                                android:id="@+id/butterChickenPriceTxtView"
+                                android:layout_width="match_parent"
+                                android:layout_height="33dp"
+                                android:text="@string/butterChickenPrice"
+                                android:textSize="@dimen/priceSize"
+                                android:textAlignment="viewEnd"
+                                />
+                        </LinearLayout>
                         <TextView
                             android:id="@+id/butterChickenDescTxtView"
                             android:layout_width="match_parent"
@@ -396,14 +485,25 @@
                                 android:layout_width="250dp"
                                 android:layout_height="150dp"
                                 app:srcCompat="@drawable/naan" />
-
-                            <TextView
-                                android:id="@+id/naanNameTxtView"
-                                android:layout_width="151dp"
+                            <LinearLayout
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="@string/naan"
-                                android:textSize="@dimen/profileText" />
-
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:id="@+id/naanNameTxtView"
+                                    android:layout_width="151dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/naan"
+                                    android:textSize="@dimen/profileText" />
+                                <TextView
+                                    android:id="@+id/naanPriceTxtView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="33dp"
+                                    android:text="@string/naanPrice"
+                                    android:textSize="@dimen/priceSize"
+                                    android:textAlignment="viewEnd"
+                                    />
+                            </LinearLayout>
                             <TextView
                                 android:id="@+id/naanDescTxtView"
                                 android:layout_width="match_parent"

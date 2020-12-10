@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,10 +18,11 @@ import com.google.firebase.firestore.Query
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_ask_address.view.*
 import kotlinx.android.synthetic.main.activity_profile.*
+import kotlinx.android.synthetic.main.address_card.*
 import kotlinx.android.synthetic.main.address_card.view.*
 
 
-class profileActivity : AppCompatActivity() {
+class ProfileActivity : AppCompatActivity() {
 
     var db = FirebaseFirestore.getInstance()
     private var adapter: AddressAdapter? = null
@@ -45,6 +47,19 @@ class profileActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, AskAddressActivity::class.java)
             startActivity(intent)
         }
+
+//        defaultAddressBtn.setOnClickListener{
+//            val intent = Intent(applicationContext, orderConfirmationActivity::class.java)
+//            intent.putExtra("addressLineOne", addressLineOneTxtView.text.toString())
+//            intent.putExtra("addressLineTwo", addressLineTwoTxtView.text.toString())
+//            intent.putExtra("city", cityTxtView.text.toString())
+//            intent.putExtra("province", provinceTxtView.text.toString())
+//            intent.putExtra("postalCode", postalCodeTxtView.text.toString())
+//
+//
+//            Toast.makeText(this, "You have selected a default address", Toast.LENGTH_SHORT).show()
+//            startActivity(intent)
+//        }
     }
 
     override fun onStart() {

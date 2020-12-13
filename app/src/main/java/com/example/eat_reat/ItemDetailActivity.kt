@@ -29,10 +29,10 @@ class ItemDetailActivity : AppCompatActivity() {
         }
 
         addCartBtn.setOnClickListener{
-            val intent = Intent(applicationContext, CartActivity::class.java)
+//            val intent = Intent(applicationContext, CartActivity::class.java)
 //            intent.putExtra("itemName", itemName)
 //            intent.putExtra("itemPrice", itemPrice)
-            intent.putExtra("itemImage", itemImage)
+//            intent.putExtra("itemImage", itemImage)
 //            startActivity(intent)
 
             val FoodItems = FoodItems()
@@ -41,10 +41,26 @@ class ItemDetailActivity : AppCompatActivity() {
             FoodItems.foodItemPrice = itemPrice.toString().trim()
             FoodItems.foodImage = itemImage
 
+            val user = FoodItems.userId!!.toString()
+            var curUser = Firebase.auth.currentUser!!.uid
             val db = FirebaseFirestore.getInstance().collection("cartItems")
-            FoodItems.foodItemId = db.document().id
-            db.document(FoodItems.foodItemId!!).set(FoodItems)
+            val database = db.document(user).collection("cart")
+//            val data = db.document(curUser)
 
+            if (db.document(FoodItems.userId!!).toString() != Firebase.auth.currentUser!!.uid) {
+                curUser = db.document().id
+                FoodItems.foodItemId = database.document().id
+                if (curUser === Firebase.auth.currentUser!!.uid) {
+                    db.document(curUser).collection("cart").document(FoodItems.foodItemId!!).set(FoodItems)
+                }
+                else{
+                    FoodItems.foodItemId = db.document().id
+                    db.document(user).collection("cart").document(FoodItems.foodItemId!!).set(FoodItems)
+                }
+            }
+            else {
+
+            }
             Toast.makeText(this, "Your have added $itemName to cart", Toast.LENGTH_LONG).show()
         }
     }

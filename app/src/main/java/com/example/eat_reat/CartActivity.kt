@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,18 +13,20 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Query
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_cart.*
 import kotlinx.android.synthetic.main.cart_item.*
 import kotlinx.android.synthetic.main.cart_item.view.*
-import java.lang.NullPointerException
+import kotlin.math.roundToInt
 
 
 class CartActivity : AppCompatActivity() {
 
     var db = FirebaseFirestore.getInstance()
     private var adapter: CartAdapter? = null
+    var curUser = Firebase.auth.currentUser!!.uid
+    var subTotal = 0.00
+    var foodId: String? = null
 //    var itemImage = intent.extras?.getInt("itemImage")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,10 +36,12 @@ class CartActivity : AppCompatActivity() {
         //setting up RecyclerView
         cartRecyclerView.layoutManager = LinearLayoutManager(this)
 
-        val query = db.collection("cartItems").whereEqualTo(
-            "userId",
-            Firebase.auth.currentUser?.uid
-        )
+
+        val query = db.collection("cartItems").document(curUser).collection("cart").whereEqualTo("userId", Firebase.auth.currentUser?.uid)
+//        val query = db.collection("cartItems").whereEqualTo(
+//            "userId",
+//            Firebase.auth.currentUser?.uid
+//        )
 
         val options = FirestoreRecyclerOptions.Builder<FoodItems>().setQuery(
             query,
@@ -46,11 +51,42 @@ class CartActivity : AppCompatActivity() {
         cartRecyclerView.adapter = adapter
 
 
+//        subTotal.toFloat()
+//        totalPrice.text = subTotal.toString()
 
+
+        checkoutButton.setOnClickListener{
+            val item = db.collection("cartItems").document(curUser)
+//            val item1 = db.collection("cartItems").whereArrayContains("foodItemId",item.toString())
+                item.delete()
+                    .addOnSuccessListener {
+                               Toast.makeText(
+                                   this,
+                                   " All cart items are deleted from cart",
+                                   Toast.LENGTH_LONG
+                               ).show()
+                           }
+                    .addOnFailureListener {
+                               Toast.makeText(
+                                   this,
+                                   " No cart items are deleted from cart",
+                                   Toast.LENGTH_LONG
+                               ).show()
+                    }
+            refresh()
+        }
+
+
+//        else throw NullPointerException()
 
 
     }
 
+
+    fun refresh(){
+        adapter!!.onDataChanged()
+        adapter!!.startListening()
+    }
 
     override fun onStart() {
         super.onStart()
@@ -82,32 +118,93 @@ class CartActivity : AppCompatActivity() {
 
         override fun onBindViewHolder(holder: CartViewHolder, position: Int, model: FoodItems) {
             holder.itemView.cartItemNameTxtView.text = model.foodItemName
-            holder.itemView.cartItemPrice.text = model.foodItemPrice
+            holder.itemView.cartItemPrice.text = "$ "+model.foodItemPrice
 //            var itemImage = intent.extras?.getInt(model.foodImage.toString())
 //            if (model.foodImage != null) {
 //                holder.itemView.cartItemImageView.setImageResource(itemImage!!)
 //            }
 //            else throw NullPointerException()
 
-//            var quantity: Int? = 0
-//            incrementBtn.setOnClickListener{
-////                quantity = if (quantity != null){
-////                    quantity+1
-////                }
-////                holder.itemView.quantity_text_view.text = quantity.toString()
-//                quantity?.inc()
+
+
+            var price = model.foodItemPrice?.toFloat()
+            var quantity: Int? = 1
+
+            holder.itemView.incrementBtn.setOnClickListener{
+                if (quantity != null){
+                    quantity =  quantity!! +1
+                    holder.itemView.quantity_text_view.text = quantity.toString()
+                }
 //                holder.itemView.quantity_text_view.text = quantity.toString()
+//                quantity?.inc()
+
+                else throw NullPointerException()
+            }
+            holder.itemView.decrementBtn.setOnClickListener{
+                if (quantity != null) {
+                    if (quantity!! > 0) {
+                        quantity = quantity!! - 1
+                        holder.itemView.quantity_text_view.text = quantity.toString()
+                    } else
+                        throw NullPointerException()
+                }
+            }
+
+            if (price != null) {
+                subTotal += (price * quantity!!)
+            }
+
+            if (subTotal != null) {
+                totalPrice?.text = subTotal.toString().trim()
+            }
+            else throw NullPointerException()
+
+
+            if(model.foodItemId != null){
+               foodId = model.foodItemId.toString()
+            }
+            else throw NullPointerException()
+
+
+
+            if (foodId != null) {
+                holder.itemView.deleteCartItem.setOnClickListener {
+//                    val item = db.collection("cartItems").whereEqualTo("foodItemId", foodId!!)
+                    val reference = db.collection("cartItems").document(curUser).collection("cart").document("$foodId")
+                    if (reference != null) {
+                        reference.delete()
+                            .addOnSuccessListener {
+                           Toast.makeText(
+                               this@CartActivity,
+                               " ${model.foodItemName} is successfully deleted from cart",
+                               Toast.LENGTH_LONG
+                           ).show()
+                       }
+                       .addOnFailureListener {
+                           Toast.makeText(
+                               this@CartActivity,
+                               " ${model.foodItemName} is not successfully deleted, Please try again",
+                               Toast.LENGTH_LONG
+                           ).show()
+                       }
+                    } else throw NullPointerException()
+                    refresh()
+                }
+            }
+
+            if (subTotal != null) {
+                totalPrice?.text = subTotal.toString().trim()
+                refresh()
+            }
+
+//            val deleteCartItem = findViewById<Button>(R.id.deleteCartItem)
 //
-//            }
-//            decrementBtn.setOnClickListener{
-//                if (quantity != null) {
-//                    if (quantity > 0){
-//                        quantity?.dec()
-//                        holder.itemView.quantity_text_view.text = quantity.toString()
-//                    } else
-////                        quantity = 0
-//                        holder.itemView.quantity_text_view.text = quantity.toString()
+//            deleteCartItem.setOnClickListener{
+//              val item =  db.collection("cartItems").whereEqualTo("foodItemId", model.foodItemId!!)
+//                if (item != null){
+//                    db.document(item.toString()).delete()
 //                }
+//                else throw NullPointerException()
 //            }
 
 //            deleteCartItem.setOnClickListener{

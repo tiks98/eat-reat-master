@@ -102,12 +102,23 @@
                                 android:textSize="@dimen/profileText" />
 
                             <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dollarSign"
+                                android:textSize="@dimen/priceSize"
+                                android:paddingStart="30sp"
+                                >
+
+                            </TextView>
+
+                            <TextView
                                 android:id="@+id/burgerPriceTxtView"
                                 android:layout_width="match_parent"
                                 android:layout_height="33dp"
                                 android:text="@string/burgerPrice"
                                 android:textSize="@dimen/priceSize"
                                 android:textAlignment="viewEnd"
+
                                 />
                         </LinearLayout>
 
@@ -149,6 +160,14 @@
                                     android:layout_height="wrap_content"
                                     android:text="@string/noodles"
                                     android:textSize="@dimen/profileText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/dollarSign"
+                                    android:textSize="@dimen/priceSize"
+                                    android:paddingStart="30sp"
+                                    />
 
                                 <TextView
                                     android:id="@+id/noodlesPriceTxtView"
@@ -221,6 +240,14 @@
                                 android:textSize="@dimen/profileText" />
 
                             <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dollarSign"
+                                android:textSize="@dimen/priceSize"
+                                android:paddingStart="30sp"
+                                />
+
+                            <TextView
                                 android:id="@+id/dalSoupPriceTxtView"
                                 android:layout_width="match_parent"
                                 android:layout_height="33dp"
@@ -266,6 +293,14 @@
                                     android:layout_height="wrap_content"
                                     android:text="@string/samosa"
                                     android:textSize="@dimen/profileText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/dollarSign"
+                                    android:textSize="@dimen/priceSize"
+                                    android:paddingStart="30sp"
+                                    />
 
                                 <TextView
                                     android:id="@+id/samosaPriceTxtView"
@@ -338,6 +373,14 @@
                                 android:textSize="@dimen/profileText" />
 
                             <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dollarSign"
+                                android:textSize="@dimen/priceSize"
+                                android:paddingStart="30sp"
+                                />
+
+                            <TextView
                                 android:id="@+id/burritoPriceTxtView"
                                 android:layout_width="match_parent"
                                 android:layout_height="33dp"
@@ -382,6 +425,15 @@
                                     android:layout_height="wrap_content"
                                     android:text="@string/tacos"
                                     android:textSize="@dimen/profileText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/dollarSign"
+                                    android:textSize="@dimen/priceSize"
+                                    android:paddingStart="30sp"
+                                    />
+
                                 <TextView
                                     android:id="@+id/tacosPriceTxtView"
                                     android:layout_width="match_parent"
@@ -450,6 +502,15 @@
                                 android:layout_height="wrap_content"
                                 android:text="@string/butterchickenName"
                                 android:textSize="@dimen/profileText" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/dollarSign"
+                                android:textSize="@dimen/priceSize"
+                                android:paddingStart="30sp"
+                                />
+
                             <TextView
                                 android:id="@+id/butterChickenPriceTxtView"
                                 android:layout_width="match_parent"
@@ -495,6 +556,15 @@
                                     android:layout_height="wrap_content"
                                     android:text="@string/naan"
                                     android:textSize="@dimen/profileText" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/dollarSign"
+                                    android:textSize="@dimen/priceSize"
+                                    android:paddingStart="30sp"
+                                    />
+
                                 <TextView
                                     android:id="@+id/naanPriceTxtView"
                                     android:layout_width="match_parent"

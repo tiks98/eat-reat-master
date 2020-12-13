@@ -88,6 +88,11 @@ class CartActivity : AppCompatActivity() {
         adapter!!.startListening()
     }
 
+    fun updateTotal() {
+        refresh()
+        totalPrice?.text = (Math.round(subTotal * 100.0) / 100.0).toString()
+    }
+
     override fun onStart() {
         super.onStart()
         adapter!!.startListening()
@@ -130,34 +135,44 @@ class CartActivity : AppCompatActivity() {
             var price = model.foodItemPrice?.toFloat()
             var quantity: Int? = 1
 
-            holder.itemView.incrementBtn.setOnClickListener{
-                if (quantity != null){
-                    quantity =  quantity!! +1
-                    holder.itemView.quantity_text_view.text = quantity.toString()
-                }
-//                holder.itemView.quantity_text_view.text = quantity.toString()
-//                quantity?.inc()
 
-                else throw NullPointerException()
+            holder.itemView.incrementBtn.setOnClickListener{
+                if (price != null) {
+                    if (quantity != null){
+                        quantity =  quantity!! +1
+                        holder.itemView.quantity_text_view.text = quantity.toString()
+                        holder.itemView.cartItemPrice.text = "$ ${(Math.round(subTotal * 100.0) / 100.0)}"
+                        subTotal += (price * quantity!!)
+                        updateTotal()
+                    }
+            //                holder.itemView.quantity_text_view.text = quantity.toString()
+            //                quantity?.inc()
+
+                    else throw NullPointerException()
+                }
             }
             holder.itemView.decrementBtn.setOnClickListener{
                 if (quantity != null) {
-                    if (quantity!! > 0) {
-                        quantity = quantity!! - 1
-                        holder.itemView.quantity_text_view.text = quantity.toString()
-                    } else
-                        throw NullPointerException()
+                    if (price != null) {
+                        if (quantity!! > 0) {
+                            quantity = quantity!! - 1
+                            holder.itemView.quantity_text_view.text = quantity.toString()
+                            holder.itemView.cartItemPrice.text = "$ ${(Math.round(subTotal * 100.0) / 100.0)}"
+                            subTotal -= (price * quantity!!) //change this logic
+                            updateTotal()
+                        } else
+                            throw NullPointerException()
+                    }
                 }
             }
 
-            if (price != null) {
+            if (price != null && subTotal != null) {
                 subTotal += (price * quantity!!)
-            }
-
-            if (subTotal != null) {
-                totalPrice?.text = subTotal.toString().trim()
+                updateTotal()
+                refresh()
             }
             else throw NullPointerException()
+
 
 
             if(model.foodItemId != null){
@@ -179,6 +194,7 @@ class CartActivity : AppCompatActivity() {
                                " ${model.foodItemName} is successfully deleted from cart",
                                Toast.LENGTH_LONG
                            ).show()
+                                updateTotal()
                        }
                        .addOnFailureListener {
                            Toast.makeText(
@@ -192,10 +208,10 @@ class CartActivity : AppCompatActivity() {
                 }
             }
 
-            if (subTotal != null) {
-                totalPrice?.text = subTotal.toString().trim()
-                refresh()
-            }
+//            if (subTotal != null) {
+//                totalPrice?.text = subTotal.toString().trim()
+//                refresh()
+//            }
 
 //            val deleteCartItem = findViewById<Button>(R.id.deleteCartItem)
 //

@@ -37,7 +37,7 @@
     <string name="SH3Home">Mexican</string>
     <string name="SH4Home">Indian</string>
     <string name="addToCart">Add to Cart</string>
-    <string name="defaultAddress">Select as Default Address</string>
+    <string name="defaultAddress">Select Address</string>
     <string name="burgerPrice">3.49</string>
     <string name="noodlesPrice">9.99</string>
     <string name="dalSoupPrice">2.49</string>
@@ -53,6 +53,10 @@
     <string name="deleteCartItem">Delete</string>
     <string name="dollarSign">$ </string>
     <string name="totalPrice" />
+    <string name="checkoutHeading">CheckOut</string>
+    <string name="checkoutDesc">Thank you for Ordering, your order will be delivered soon</string>
+    <string name="homeBtn">Order Again</string>
+    <string name="confirmAddress">Please Confirm Your Address</string>
     <item name="profileHeading" type="id" />
     <item name="addressCardRecyclerView" type="id" />
     <item name="addNewAddressBtn" type="id" />

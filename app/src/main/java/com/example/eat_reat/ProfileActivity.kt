@@ -35,11 +35,13 @@ class ProfileActivity : AppCompatActivity() {
         addressCardRecyclerView.layoutManager = LinearLayoutManager(this)
 
         //query DB for all address entered by the user
-        val query = db.collection("UserDetails").whereEqualTo("userId", Firebase.auth.currentUser?.uid)
-//        val query = db.collection("UserDetails").orderBy("addressLineOne", Query.Direction.ASCENDING)
+        val query =
+            db.collection("UserDetails").whereEqualTo("userId", Firebase.auth.currentUser?.uid)
 
 
-        val options = FirestoreRecyclerOptions.Builder<UserDetails>().setQuery(query, UserDetails::class.java).build()
+        val options =
+            FirestoreRecyclerOptions.Builder<UserDetails>().setQuery(query, UserDetails::class.java)
+                .build()
         adapter = AddressAdapter(options)
         addressCardRecyclerView.adapter = adapter
 
@@ -48,18 +50,6 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        defaultAddressBtn.setOnClickListener{
-//            val intent = Intent(applicationContext, orderConfirmationActivity::class.java)
-//            intent.putExtra("addressLineOne", addressLineOneTxtView.text.toString())
-//            intent.putExtra("addressLineTwo", addressLineTwoTxtView.text.toString())
-//            intent.putExtra("city", cityTxtView.text.toString())
-//            intent.putExtra("province", provinceTxtView.text.toString())
-//            intent.putExtra("postalCode", postalCodeTxtView.text.toString())
-//
-//
-//            Toast.makeText(this, "You have selected a default address", Toast.LENGTH_SHORT).show()
-//            startActivity(intent)
-//        }
     }
 
     override fun onStart() {
@@ -75,13 +65,15 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     //bind the data to recyclerview
-    private inner class AddressViewHolder internal constructor(private val view: View): RecyclerView.ViewHolder(view) {}
+    private inner class AddressViewHolder internal constructor(private val view: View) :
+        RecyclerView.ViewHolder(view) {}
 
     private inner class AddressAdapter internal constructor(options: FirestoreRecyclerOptions<UserDetails>) :
-            FirestoreRecyclerAdapter<UserDetails, AddressViewHolder>(options) {
+        FirestoreRecyclerAdapter<UserDetails, AddressViewHolder>(options) {
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddressViewHolder {
             //inflate layout file to populate the recyclerview
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.address_card, parent, false)
+            val view =
+                LayoutInflater.from(parent.context).inflate(R.layout.address_card, parent, false)
             return AddressViewHolder(view)
         }
 
@@ -91,12 +83,29 @@ class ProfileActivity : AppCompatActivity() {
             model: UserDetails
         ) {
             //populate all the data from firebase into matching textview
-            holder.itemView.firstNameTxtView.text = "Name: " + Firebase.auth.currentUser!!.displayName
+            holder.itemView.firstNameTxtView.text =
+                "Name: " + Firebase.auth.currentUser!!.displayName
             holder.itemView.addressLineOneTxtView.text = "Address Line 1: " + model.addressLineOne
             holder.itemView.addressLineTwoTxtView.text = "Address Line 2: " + model.addressLineTwo
             holder.itemView.cityTxtView.text = "City: " + model.city
             holder.itemView.provinceTxtView.text = "Province: " + model.province
             holder.itemView.postalCodeTxtView.text = "Postal Code: " + model.postalCode
+
+            var Total = intent.getStringExtra("Total")
+
+            holder.itemView.defaultAddressBtn.setOnClickListener {
+                val intent = Intent(applicationContext, CheckoutActivity::class.java)
+                intent.putExtra("Total", Total)
+                intent.putExtra("addressLineOne", model.addressLineOne)
+                intent.putExtra("addressLineTwo", model.addressLineTwo)
+                intent.putExtra("city", model.city)
+                intent.putExtra("province", model.province)
+                intent.putExtra("postalCode", model.postalCode)
+                Toast.makeText(this@ProfileActivity,
+                    "You have selected a default address",
+                    Toast.LENGTH_SHORT).show()
+                startActivity(intent)
+            }
         }
     }
 }

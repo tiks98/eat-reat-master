@@ -9,19 +9,6 @@
         android:layout_margin="8dp">
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="0dp">
-
-            <ImageView
-                android:id="@+id/cartItemImageView"
-                android:layout_width="150dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="20dp"/>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -46,12 +33,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:layout_marginStart="20dp"
+                    android:layout_gravity="center"
                     >
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/decrementBtn"
+                        android:layout_marginStart="30dp"
                         android:text="-" />
 
                     <TextView
@@ -71,25 +60,24 @@
                         android:text="+" />
 
 
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/deleteCartItem"
+                        android:backgroundTint="@color/red"
+                        android:text="@string/deleteCartItem"
+                        android:textColor="@color/white"
+                        android:layout_gravity="right"
+                        android:layout_marginStart="20dp"
+                        >
+                    </Button>
 
                 </LinearLayout>
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/deleteCartItem"
-                    android:backgroundTint="@color/red"
-                    android:text="@string/deleteCartItem"
-                    android:textColor="@color/white"
-                    android:layout_gravity="center"
-                    >
 
-                </Button>
 
 
             </LinearLayout>
-
-        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 

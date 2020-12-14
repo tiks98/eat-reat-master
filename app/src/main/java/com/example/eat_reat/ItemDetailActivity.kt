@@ -29,10 +29,10 @@ class ItemDetailActivity : AppCompatActivity() {
         }
 
         addCartBtn.setOnClickListener{
-//            val intent = Intent(applicationContext, CartActivity::class.java)
+            val intent = Intent(applicationContext, CartActivity::class.java)
 //            intent.putExtra("itemName", itemName)
 //            intent.putExtra("itemPrice", itemPrice)
-//            intent.putExtra("itemImage", itemImage)
+            intent.putExtra("itemImage", itemImage)
 //            startActivity(intent)
 
             val FoodItems = FoodItems()

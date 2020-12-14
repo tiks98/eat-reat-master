@@ -600,42 +600,41 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/orange"
             android:clickable="true"
+            android:focusable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_baseline_fastfood_black_48"
-            android:focusable="true" />
+            app:srcCompat="@drawable/ic_baseline_fastfood_black_48" />
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
             android:layout_marginStart="100dp"
+            android:layout_marginBottom="20dp"
             android:clickable="true"
             android:focusable="true"
-            app:backgroundTint="#FFFFFF"
+            app:backgroundTint="@color/orange"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/cartFab"
             app:layout_constraintStart_toEndOf="@+id/homeFab"
             app:srcCompat="@drawable/ic_baseline_account_circle_black_48" />
 
 
-
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/cartFab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
             android:layout_marginStart="90dp"
-            android:backgroundTint="@color/white"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/orange"
             android:clickable="true"
+            android:focusable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_baseline_shopping_cart_black_96"
-            android:focusable="true" />
+            app:srcCompat="@drawable/ic_baseline_shopping_cart_black_96" />
     </LinearLayout>
 
 

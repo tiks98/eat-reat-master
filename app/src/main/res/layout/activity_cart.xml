@@ -15,62 +15,84 @@
         android:text="@string/cartHeading"
         android:textColor="@color/black"
         android:textSize="@dimen/headingSize24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></TextView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cartRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="100dp"
+        android:foregroundGravity="top"
+        app:layout_constraintBottom_toTopOf="@id/checkoutVLL"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cartHeadingTxtView"
-        >
+        app:layout_constraintVertical_bias="0.0">
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/checkoutHLL"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/checkoutButton">
+        android:id="@+id/checkoutVLL"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:backgroundTint="@color/white"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/checkoutHLL"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@id/checkoutButton"
+                android:backgroundTint="@color/white"
+                android:background="@color/white">
 
-        <TextView
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/totalTxtView"
+                    android:text="@string/totalTxtView"
+                    android:textSize="@dimen/headingSize24"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="20dp"
+                    >
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/totalPrice"
+                    android:text="@string/totalPrice"
+                    android:textSize="@dimen/headingSize24"
+                    android:textColor="@color/black"
+                    android:paddingStart="20dp"
+                    ></TextView>
+
+
+
+
+            </LinearLayout>
+
+        <Button
+            android:id="@+id/checkoutButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/totalTxtView"
-            android:text="@string/totalTxtView"
-            android:textSize="@dimen/headingSize24"
-            android:textColor="@color/black"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="20dp"
-            >
-        </TextView>
+            android:backgroundTint="@color/green"
+            android:text="@string/checkout"
+            android:textColor="@color/white"
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/totalPrice"
-            android:text="@string/totalPrice"
-            android:textSize="@dimen/headingSize24"
-            android:textColor="@color/black"
-            android:paddingStart="20dp"
-            ></TextView>
-
-
-
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </LinearLayout>
-    <Button
-        android:id="@+id/checkoutButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="@string/checkout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-
-        />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

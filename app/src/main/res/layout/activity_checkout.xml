@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CheckoutActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkoutHeading"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/checkoutHeading"
+        android:textSize="@dimen/headingSize24"
+        android:layout_marginTop="40dp"
+        ></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkoutDesc"
+        app:layout_constraintTop_toBottomOf="@id/checkoutHeading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/checkoutDesc"
+        android:textSize="30sp"
+        android:layout_marginTop="30dp"
+        ></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkoutTotal"
+        app:layout_constraintTop_toBottomOf="@id/checkoutDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text=""
+        android:textSize="30sp"
+        android:layout_marginTop="30dp"
+        ></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/confirmAddress"
+        app:layout_constraintTop_toBottomOf="@id/checkoutTotal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/confirmAddress"
+        android:textSize="26sp"
+        android:layout_marginTop="30dp"
+        ></TextView>
+
+    <TextView
+        android:id="@+id/addressLineOneTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:textColor="#000000"
+        android:textSize="@dimen/profileText"
+        app:layout_constraintTop_toBottomOf="@id/confirmAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/addressLineTwoTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#000000"
+        android:textSize="@dimen/profileText"
+        app:layout_constraintTop_toBottomOf="@id/addressLineOneTxtView"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/cityTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#000000"
+        android:textSize="@dimen/profileText"
+        app:layout_constraintTop_toBottomOf="@id/addressLineTwoTxtView"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/provinceTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#000000"
+        android:textSize="@dimen/profileText"
+        app:layout_constraintTop_toBottomOf="@id/cityTxtView"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <TextView
+        android:id="@+id/postalCodeTxtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#000000"
+        android:textSize="@dimen/profileText"
+        app:layout_constraintTop_toBottomOf="@id/provinceTxtView"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/homeBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:backgroundTint="@color/orange"
+        android:text="@string/homeBtn"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        ></Button>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
